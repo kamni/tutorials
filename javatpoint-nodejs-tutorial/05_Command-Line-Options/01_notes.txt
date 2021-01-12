@@ -1,0 +1,36 @@
+# Command Line Options
+
+## Highlights
+
+Run a script without printing the result:
+
+```
+node -e <script>
+```
+
+Run a script, but print the result:
+
+```
+node -p <script>
+```
+
+Syntax check the script without running:
+
+```
+node -c <script>
+```
+
+Some flags useful for checking deprecation warnings:
+
+```
+--no-deprecation
+--trace-deprecation
+--throw-deprecation
+```
+
+And flags about warnings (including deprecations):
+
+```
+--no-warnings
+--trace-warnings
+```

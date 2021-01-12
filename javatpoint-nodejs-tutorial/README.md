@@ -4,6 +4,7 @@ This tutorial comes from [https://www.javatpoint.com/nodejs-tutorial|Java T Poin
 and covers the basics of node.js.
 
 Started: 2021-01-12
+Node: 14.15.4 LTS
 
 
 ## Notes for Introduction

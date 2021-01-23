@@ -1,7 +1,7 @@
 <template>
     <Page>
         <ActionBar>
-            <Label text="Home"/>
+            <Label text="NextScript-Vue Tutorial"/>
         </ActionBar>
 
         <GridLayout>
@@ -19,7 +19,7 @@
   export default {
     computed: {
       message() {
-        return "Blank {N}-Vue app";
+        return "Hello, Tutorial";
       }
     }
   };

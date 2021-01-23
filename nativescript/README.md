@@ -34,3 +34,20 @@ npx ns preview --path vue/tutorial
 ```
 
 Then scan the QR code using the NativeScript Playground app on the phone.
+
+
+## Starting Other Projects
+
+You can create a new project using:
+
+```bash
+npx ns create
+```
+
+If you would like to use a template, you can find a variety of templates in the
+[template market](https://plugins.nativescript.rocks/templates). Here is an
+example using the file drawer template:
+
+```bash
+ns create drawer-example --template @nativescript/template-drawer-navigation-vue
+```

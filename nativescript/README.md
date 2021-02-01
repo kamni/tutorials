@@ -51,3 +51,6 @@ example using the file drawer template:
 ```bash
 ns create drawer-example --template @nativescript/template-drawer-navigation-vue
 ```
+
+There are also a wide variety of plugins that can be installed from the
+[NativeScript marketplace](https://market.nativescript.org/).

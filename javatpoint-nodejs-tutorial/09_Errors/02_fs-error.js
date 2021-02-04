@@ -9,5 +9,5 @@ const nodeStyleCallback = ( err, data ) => {
   console.log( data );
 }
 
-fs.readFile( 'does-not-exist.txt', nodeStyleCallback );
 fs.readFile( '02_text.txt', nodeStyleCallback );
+fs.readFile( 'does-not-exist.txt', nodeStyleCallback );

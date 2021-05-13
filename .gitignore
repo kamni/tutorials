@@ -2,5 +2,6 @@
 *.DS_Store
 *.swo
 *.swp
+.venv
 **/node_modules/**
 **/target/**

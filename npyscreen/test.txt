@@ -1,0 +1,6 @@
+FreeText=What is this
+MultiChoice=Choice 2
+Filename=/home/user/Code/personal/tutorials/npyscreen/requirements.txt
+Date=Sat May 15 00:00:00 2021
+MultilineText=Once upon a time\nThere was more text\nThan we knew what to do with,\nAnd the world was happy.
+MultilineList=One	Two	Three

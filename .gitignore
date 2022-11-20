@@ -6,3 +6,4 @@
 **/node_modules/**
 **/target/**
 **/.terraform/**
+**/terraform.tfstate*

@@ -1,8 +1,9 @@
 /*
- * This is following the following tutorials:
+ * Following these tutorials:
  *
  * - https://developer.hashicorp.com/terraform/tutorials/docker-get-started/install-cli
  * - https://developer.hashicorp.com/terraform/tutorials/docker-get-started/docker-variables
+ * - https://developer.hashicorp.com/terraform/tutorials/docker-get-started/docker-outputs
  *
  * The tutorial creates some warnings. Here is the fix:
  *

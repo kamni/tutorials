@@ -11,6 +11,9 @@ func main() {
     foo("")
 }
 
+// Bookmark: https://golang.org/doc/tutorial/greetings-multiple-people
+// Currently there are errors when I try to run the code, which I haven't
+// tried to fix yet.
 func foo(name string) {
     // Set the properties of the logger
     log.SetPrefix("hello: ")

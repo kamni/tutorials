@@ -22,3 +22,4 @@ go run .
 ## Lessons
 
 * [Lesson 01](https://golang.org/doc/tutorial/getting-started)
+* [Lesson 02](https://golang.org/doc/tutorial/create-module)

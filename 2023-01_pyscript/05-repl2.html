@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>PyScript REPL</title>
+
+    <link rel="stylesheet" href="/vendor/pyscript/pyscript.css" />
+    <script defer src="/vendor/pyscript/pyscript.js"></script>
+    <py-config>
+      - autoclose_loader: true
+      - runtimes:
+        -
+          src: "/vendor/pyodide/pyodide.js"
+          name: pyodide-0.20
+          lang: python
+    </py-config>
+
+    <link rel="stylesheet" href="/static/style/style.css">
+    <style>
+     body {
+       background-color: #eee;
+     }
+     .container {
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       grid-auto-rows: minmax(200px, auto);
+       grid-gap: 1em;
+       margin-top: 1em;
+     }
+     .container > div:first-child {
+       grid-row: 1/3;
+     }
+     .container > div {
+       background-color: #fff;
+       box-shadow: 0px 5px 10px #ccc;
+       padding: 10px;
+     }
+    </style>
+
+    <py-env>
+      - matplotlib
+      - numpy
+    </py-env>
+  </head>
+
+  <body>
+    <py-script src="/static/script/nav.py"></py-script>
+
+    <div class="container">
+      <div>
+        <!-- What divs to send std-out and std-err for the repl -->
+        <py-repl std-out="output" std-err="errors">
+import matplotlib.pyplot as plt
+import numpy as np
+
+def wave(frequency, amplitude=1, phase=0):
+    def _wave(time):
+        return amplitude * np.sin(2 * np.pi * frequency * time + phase)
+
+    return _wave
+
+time = np.linspace(0, 2 * np.pi, 100)
+plt.plot(time, wave(440)(time))
+plt
+        </py-repl>
+      </div>
+      <div>
+        <h2>Output</h2>
+        <div id="output"></div>
+      </div>
+      <div>
+        <h2>Errors and Warnings</h2>
+        <div id="errors"></div>
+      </div>
+    </div>
+  </body>
+</html>

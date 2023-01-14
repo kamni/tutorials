@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>PyScript REPL</title>
+
+    <link rel="stylesheet" href="/vendor/pyscript/pyscript.css" />
+    <script defer src="/vendor/pyscript/pyscript.js"></script>
+    <py-config>
+      - autoclose_loader: true
+      - runtimes:
+        -
+          src: "/vendor/pyodide/pyodide.js"
+          name: pyodide-0.20
+          lang: python
+    </py-config>
+
+    <link rel="stylesheet" href="/static/style/style.css">
+    <style>
+     .crossed {
+       text-decoration: line-through;
+     }
+     .item {
+       cursor: pointer;
+     }
+     #shopping-list {
+       margin: 0 20px;
+     }
+     #shopping-list ul {
+       margin-bottom: 10px;
+     }
+    </style>
+  </head>
+
+  <body>
+    <py-script src="/static/script/nav.py"></py-script>
+
+    <div id="shopping-list">
+      <h1>Shopping List</h1>
+      <ul>
+        <li><span class="item crossed" data-price=299>milk</span></li>
+        <li><span class="item crossed" data-price=324>eggs</span></li>
+        <li><span class="item" data-price=180>bread</span></li>
+      </ul>
+
+      <p><b>Total: </b><span id="total"></span></p>
+
+      <input id="new-item" type="text" placeholder="Add new item">
+      <button>Add</button>
+
+    </div>
+
+    <py-script>
+import random
+from pyodide import create_proxy
+
+def calculate_total():
+    shopping_list = document.querySelectorAll(".item")
+    total = 0
+    for item in shopping_list:
+        total += int(item.dataset.price)
+
+    total_cost = document.querySelector("#total")
+    total_cost.innerHTML = f'${total / 100:.2f}'
+
+def cross_off(event):
+    event.target.classList.toggle("crossed")
+
+def add_item(event):
+    input = document.querySelector("#new-item")
+    if input.value:
+        new_item = document.createElement("span")
+        new_item.innerText = input.value
+        new_item.classList.add("item")
+        new_item.addEventListener("click", create_proxy(cross_off))
+        new_item.dataset.price = random.randint(99, 499)
+
+        new_list_item = document.createElement("li")
+        new_list_item.appendChild(new_item)
+
+        shopping_list = document.querySelector("#shopping-list ul")
+        shopping_list.appendChild(new_list_item)
+        input.value = ''
+        calculate_total()
+
+submit_button = document.querySelector("#shopping-list button")
+submit_button.addEventListener("click", create_proxy(add_item))
+
+shopping_list = document.querySelectorAll(".item")
+for item in shopping_list:
+    item.addEventListener("click", create_proxy(cross_off))
+
+calculate_total()
+    </py-script>
+  </body>
+</html>

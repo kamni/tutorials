@@ -6,6 +6,7 @@ NAV_LINKS = (
     ('/04-repl.html', '04 REPL'),
     ('/05-repl2.html', '05 More REPL'),
     ('/06-components.html', '06 Components'),
+    ('/07-dom.html', '07 DOM Manipulation'),
 )
 
 navlist = '<div class="nav"><ul>'

@@ -1,6 +1,12 @@
 a {
   text-decoration: underline;
 }
+button {
+  padding: 3px 10px;
+  background-color: #eee;
+  border: 1px solid black;
+  border-radius: 5px;
+}
 h1 {
   font-size: 1.8em;
 }
@@ -11,10 +17,19 @@ h1, h2, h3 {
   font-weight: bold;
   margin: .5em 0;
 }
-ul li {
-  display: inline;
-  padding: 0 10px;
+input {
+  border: 1px solid #eee;
+  border-radius: 5px;
 }
+ul {
+  list-style: disc inside;
+}
+
 .nav {
   margin: 20px 0;
+}
+.nav > ul li {
+  display: inline;
+  padding: 0 10px;
+  list-style: none;
 }

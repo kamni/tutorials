@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>PyScript REPL</title>
+
+    <link rel="stylesheet" href="/vendor/pyscript/pyscript.css" />
+    <script defer src="/vendor/pyscript/pyscript.js"></script>
+    <py-config>
+      - autoclose_loader: true
+      - runtimes:
+        -
+          src: "/vendor/pyodide/pyodide.js"
+          name: pyodide-0.20
+          lang: python
+    </py-config>
+
+    <link rel="stylesheet" href="/static/style/style.css">
+  </head>
+
+  <body>
+    <py-script src="/static/script/nav.py"></py-script>
+
+    <py-title>PyScript Playground</py-title>
+
+    <py-box widths="2/3;1/6;1/6">
+      <div>Wide Column</div>
+      <div>Narrow Column</div>
+      <div>Narrow Column</div>
+    </py-box>
+
+    <py-button label="Click Me" styles="btn big">
+def on_click(event):
+    print(event)
+    </py-button>
+
+    <py-inputbox>
+def on_keypress(event):
+    print(event)
+    </py-inputbox>
+
+  </body>
+</html>

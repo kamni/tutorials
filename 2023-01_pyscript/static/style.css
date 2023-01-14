@@ -1,0 +1,10 @@
+a {
+    text-decoration: underline;
+}
+ul li {
+    display: inline;
+    padding: 0 10px;
+}
+.nav {
+    margin: 20px 0;
+}

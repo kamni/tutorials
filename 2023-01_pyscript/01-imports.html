@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>PyScript Imports Example</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+    <link rel="stylesheet" href="/vendor/pyscript/pyscript.css" />
+    <script defer src="/vendor/pyscript/pyscript.js"></script>
+    <py-config>
+      - autoclose_loader: true
+      - runtimes:
+        -
+          src: "/vendor/pyodide/pyodide.js"
+          name: pyodide-0.20
+          lang: python
+    </py-config>
+
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+
+  <body>
+    <py-env>
+      - matplotlib
+      - numpy
+      - paths:
+          - static/nav.py
+    </py-env>
+    <py-script src="/static/nav.py"></py-script>
+
+    <py-script>
+# Run this using "asyncio"
+async def main():
+    await micropip.install(["matplotlib", "numpy"])
+
+await loop.run_until_complete(main())
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+time = np.linspace(0, 2 * np.pi, 100)
+plt.plot(time, np.sin(time))
+plt
+    </py-script>
+  </body>
+</html>

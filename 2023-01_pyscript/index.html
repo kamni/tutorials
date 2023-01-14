@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>PyScript Hello World</title>
+
+    <!-- Uncomment to use the server resources -->
+    <!--
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    -->
+    <!-- Local resources -->
+    <link rel="stylesheet" href="/vendor/pyscript/pyscript.css" />
+    <script defer src="/vendor/pyscript/pyscript.js"></script>
+    <py-config>
+      - autoclose_loader: true
+      - runtimes:
+        -
+          src: "/vendor/pyodide/pyodide.js"
+          name: pyodide-0.20
+          lang: python
+    </py-config>
+
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+
+  <body>
+    <py-env>
+      - paths:
+          - static/nav.py
+    </py-env>
+    <py-script src="/static/nav.py"></py-script>
+
+    <py-script>print("Hello World!")</py-script>
+    <py-script src="/static/myscript.py"></py-script>
+
+  </body>
+</html>

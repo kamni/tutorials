@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>PyScript REPL</title>
+
+    <link rel="stylesheet" href="/vendor/pyscript/pyscript.css" />
+    <script defer src="/vendor/pyscript/pyscript.js"></script>
+    <py-config>
+      - autoclose_loader: true
+      - runtimes:
+        -
+          src: "/vendor/pyodide/pyodide.js"
+          name: pyodide-0.20
+          lang: python
+    </py-config>
+
+    <link rel="stylesheet" href="/static/style/style.css">
+
+    <py-env>
+      - matplotlib
+      - numpy
+    </py-env>
+  </head>
+
+  <body>
+    <py-script src="/static/script/nav.py"></py-script>
+
+    <py-repl>
+import matplotlib.pyplot as plt
+import numpy as np
+    </py-repl>
+
+    <py-repl>
+def wave(frequency, amplitude=1, phase=0):
+    def _wave(time):
+        return amplitude * np.sin(2 * np.pi * frequency * time + phase)
+
+    return _wave
+    </py-repl>
+
+    <!-- When you hit shift-enter, this evaluates the repl and adds
+         another repl block. -->
+    <py-repl auto-generate="true"></py-repl>
+  </body>
+</html>

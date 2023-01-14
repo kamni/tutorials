@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>PyScript Hello World</title>
+
+    <link rel="stylesheet" href="/vendor/pyscript/pyscript.css" />
+    <script defer src="/vendor/pyscript/pyscript.js"></script>
+    <py-config>
+      - autoclose_loader: true
+      - runtimes:
+        -
+          src: "/vendor/pyodide/pyodide.js"
+          name: pyodide-0.20
+          lang: python
+    </py-config>
+
+    <link rel="stylesheet" href="/static/style/style.css">
+  </head>
+
+  <body>
+    <py-env>
+      - paths:
+          - static/script/nav.py
+          - static/data/people.csv
+          - static/data/people.sql
+    </py-env>
+    <py-script src="/static/script/nav.py"></py-script>
+
+    <h1>people.csv</h1>
+    <py-script>
+with open("people.csv") as db:
+    for person in db.readlines():
+        print(person)
+    </py-script>
+
+    <h1>people.sql</h1>
+    <py-script>
+import sqlite3
+
+with sqlite3.connect("people.sql") as conn:
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM people")
+    for row in cursor.fetchall():
+        print(row)
+    </py-script>
+  </body>
+</html>

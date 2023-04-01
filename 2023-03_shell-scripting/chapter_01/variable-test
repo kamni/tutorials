@@ -1,0 +1,22 @@
+#!/bin/bash
+
+###############################################################################
+#                                                                             #
+#  Play with variables                                                        #
+#                                                                             #
+###############################################################################
+
+# Is this really a variable, though? I think of these more as constants.
+# If I were defining a variable intended to change, I'd choose lower-case
+# letters.
+
+MY_SHELL="bash"
+
+echo "I like the ${MY_SHELL} shell"
+echo "Which is the same as $MY_SHELL"
+echo "But the brackets are useful when ${MY_SHELL}ing"
+echo "Which is very different than $MY_SHELLing"
+
+SERVER_NAME=$(hostname)
+echo "You are running this script on ${SERVER_NAME}"
+

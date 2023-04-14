@@ -1,3 +1,5 @@
+# https://www.openpolicyagent.org/docs/latest/policy-language/#the-basics
+
 ###############################################################################
 #                                                                             #
 #  Request:                                                                   #
@@ -46,8 +48,8 @@ pi := 3.14159
 
 # Composite value
 rect := {
-	"width": 4,
-	"height": 2,
+    "width": 4,
+    "height": 2,
 }
 
 # This variable is defined even if it evaluates to false,
@@ -61,7 +63,7 @@ v if "hello" == "world"
 
 # Complex rule
 t2 if {
-	x := 42
+    x := 42
     y := 41
     x > y
 }

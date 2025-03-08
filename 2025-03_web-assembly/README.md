@@ -38,11 +38,11 @@ Unfortunately if you fix them, the example won't work.
 Build with webpack:
 
 ```bash
-npx webpack
+npm run build
 ```
 
 Run the server:
 
 ```bash
-npx webpack serve
+npm run serve
 ```

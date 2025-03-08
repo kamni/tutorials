@@ -1,15 +1,16 @@
-/**
- * Copyright (C) J Leadbetter <j@jleadbetter.com>
- * License: MIT
- **/
+const { loadPyodide, version } = require("pyodide");
 
-import { loadPyodide } from "pyodide";
-
-async function hello_python() {
-  let pyodide = await loadPyodide({ indexURL: `${window.location.origin}/pyodide` });
-  return pyodide.runPythonAsync("1+1");
+async function main() {
+  console.log("pyodide version", version);
+  let pyodide = await loadPyodide({
+    indexURL: `${window.location.origin}/pyodide`,
+  });
+  // Pyodide is now ready to use...
+  console.log(
+    pyodide.runPython(`
+    import sys
+    sys.version
+  `)
+  );
 }
-
-hello_python().then((result) => {
-  console.log("Python says that 1+1 =", result);
-});
+main();

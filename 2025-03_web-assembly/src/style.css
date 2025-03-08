@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+/* set codemirror ide height to 100% of the textarea */
+.CodeMirror {
+  height: 100%;
+}

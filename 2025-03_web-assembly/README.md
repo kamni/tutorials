@@ -39,6 +39,7 @@ Build with webpack:
 
 ```bash
 npm run build
+npm run buildcss
 ```
 
 Run the server:

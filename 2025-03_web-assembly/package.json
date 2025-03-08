@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "webpack && npx @tailwindcss/cli -i ./src/style.css -o ./public/style.css",
+    "build": "webpack",
+    "buildcss": "npx @tailwindcss/cli -i ./src/style.css -o ./public/style.css",
     "serve": "webpack serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,6 +19,7 @@
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.0.12",
+    "codemirror": "^6.0.1",
     "pyodide": "^0.24.1",
     "tailwindcss": "^4.0.12"
   },

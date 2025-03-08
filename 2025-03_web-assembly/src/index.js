@@ -12,5 +12,6 @@ async function main() {
     sys.version
   `)
   );
+  console.log('We made it!');
 }
 main();

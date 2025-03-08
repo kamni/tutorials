@@ -30,28 +30,19 @@ Set up javascript requirements:
 npm install
 ```
 
+**WARNING:** Resist the urge to fix the moderate security vulnerabilities.
+Unfortunately if you fix them, the example won't work.
+
 ## Running the Tutorial Example
 
 Build with webpack:
 
 ```bash
-cd src
 npx webpack
 ```
 
 Run the server:
 
 ```bash
-cd ../public
 npx webpack serve
-```
-
-## Development
-
-The Javascript for this project should already have everything compile.
-If you need to recompile:
-
-```bash
-cd src
-npx webpack
 ```

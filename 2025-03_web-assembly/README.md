@@ -12,7 +12,7 @@ These are versions that I used to get this tutorial working:
 
 * Python 3.12
 * Pyodide v0.23.7
-* Node 23.6.0 / NPM 11.0.0
+* Node 22.14.0 / NPM 10.9.2
 
 ## Setup
 
@@ -29,3 +29,7 @@ Set up javascript requirements:
 ```bash
 npm install
 ```
+
+## Development
+
+The Javascript for this project should already have 
